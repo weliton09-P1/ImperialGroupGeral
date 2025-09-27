@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Imperial Group</title>
+  <link rel="icon" type="image/png" sizes="128x128" href="logo.png">
+
+  <style>
+
+   body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('8656361-a-dark-cartoon-cartoon-dark-hd-phone.jpg') repeat;
+  background-size: 300px;
+  background-position: top left;
+  background-attachment: scroll;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  position: relative;
+  z-index: 0;
+}
+g {
+  font-family: 'TurboJungle', sans-serif;
+  font-size: 30px; /* 👉 Aumenta o tamanho da fonte */
+  letter-spacing: 2px; /* 👉 Espaçamento maior entre letras */
+}
+    small {
+      color: rgb(221, 255, 0);
+      margin-top: 40px;
+    }
+    m {
+      color: rgb(115, 255, 0);
+      margin-top: 80px;
+    }
+
+    header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0); /* Transparente */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+    header button {
+      margin-left: 15px;
+      padding: 10px 18px;
+      border: none;
+      cursor: pointer;
+      background: #222;
+      color: #ffffff;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    header button:hover {
+      background: #0ff;
+      color: #000;
+    }
+    section {
+      display: none;
+      padding: 50px 15%;
+    }
+    section.active {
+      display: block;
+    }
+    h1 {
+       color: rgb(0, 174, 255);
+      margin-top: 5px;
+    }
+    h3 {
+      color: rgb(0, 255, 221);
+      margin-top: 40px;
+    }
+
+    n {
+  margin-top: 5px;
+  color: rgb(0, 255, 187);
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow:
+      0 0 5px rgb(132, 255, 0),
+      0 0 10px rgb(89, 255, 0),
+      0 0 20px rgb(13, 255, 0),
+      0 0 40px rgb(0, 255, 0);
+  }
+  to {
+    text-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 30px #00ffff,
+      0 0 50px #00ffff;
+  }
+}
+    h2 {
+        margin-top: 5px;
+      color: rgb(0, 255, 221);
+      border: rgb(255, 255, 255);
+      overflow: hidden;
+    }
+    x {
+        margin-top: 5px;
+      color: rgb(34, 255, 0);
+      border: rgb(255, 255, 255);
+      overflow: hidden;
+    }
+    a {
+       background: rgb(0, 255, 213);
+        margin-top: 5px;
+      color: rgb(0, 0, 0);
+      border: rgb(255, 255, 255);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .step {
+      text-align: left;
+      margin: 25px auto;
+      max-width: 700px;
+    }
+    .step button {
+      background: #0ff;
+      color: #000;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+    }
+    .faq .item {
+      margin: 10px 0;
+      border: 1px solid #333;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .faq .q {
+      background: #222;
+      color: #ffffff;
+      padding: 12px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq .a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 12px;
+      background: #111;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    .faq .a.open {
+      max-height: 600px;
+      padding: 12px;
+    }
+    .store {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .coin {
+      background: #111;
+      border: 2px solid rgb(17, 0, 255);
+      border-radius: 10px;
+      padding: 30px;
+      width: 100px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .coin:hover {
+      transform: scale(1.1);
+      background: #0ff;
+      color: #000;
+    }
+    .support-btn {
+  margin-top: 30px;
+  background: rgb(255, 106, 0);
+  color: #000;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  /* Efeito neon */
+  text-shadow:
+    0 0 5px #ffae00,
+    0 0 10px #ffae00,
+    0 0 20px #ffae00,
+    0 0 40px #ff6a00;
+  box-shadow:
+    0 0 5px #ffae00,
+    0 0 15px #ff6a00,
+    0 0 30px #ff6a00;
+
+  animation: neonButton 1.5s infinite alternate;
+}
+
+@keyframes neonButton {
+  from {
+    box-shadow:
+      0 0 5px #ff9900,
+      0 0 10px #ff8400,
+      0 0 20px #66ff00;
+  }
+  to {
+    box-shadow:
+      0 0 10px #ffae00,
+      0 0 20px #ff6a00,
+      0 0 40px #ff3c00;
+  }
+}
+.balanco1 {
+  font-size: 22px;
+  color: #00ffee;
+  display: inline-block;
+  animation: swing 2s infinite ease-in-out;
+}
+
+@keyframes swing {
+  0% { transform: rotate(3deg); }
+  20% { transform: rotate(-3deg); }
+  70% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+.balanco {
+  font-size: 22px;
+  color: #00ffee;
+  display: inline-block;
+  animation: swing 2s infinite ease-in-out;
+}
+
+@keyframes swing {
+  0% { transform: rotate(-3deg); }
+  20% { transform: rotate(3deg); }
+  70% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+
+    /* popup suporte */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      z-index: 2000;
+    }
+    .popup h3 {
+      margin-top: 0;
+    }
+    .popup input, .popup textarea {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #333;
+      background: #222;
+      color: #ffffff;
+    }
+    .popup button {
+      background: #0ff;
+      color: #000;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup .close {
+      float: right;
+      background: #f00;
+      color: #ffffff;
+      margin-top: -10px;
+    }
+    #backTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: #0ff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: none;
+    }
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* quanto mais alto, mais escuro (0.0 a 1.0) */
+  z-index: -1;
+}
+.logo img {
+  height: 100px;
+}
+
+.menu-buttons button {
+  margin-left: 10px;
+}
+
+@font-face {
+  font-family: 'TurboJungle';
+  src: url('Turbo Jungle.ttf') format('truetype');
+}
+
+.titulo-efeito {
+  font-family: 'TurboJungle', sans-serif;
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: #00ffee;
+}
+/* Popup da Loja */
+#storePopup {
+  text-align: center;
+}
+#storePopup p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #0ff;
+}
+.discord-container {
+  display: flex;
+  justify-content: space-between; /* esquerda/direita */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.discord-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Garante que os botões dentro de cada grupo fiquem empilhados verticalmente */
+.discord-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.discord-item {
+  display: flex;
+  flex-direction: row; /* imagem à esquerda, texto à direita */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px; /* espaço entre imagem e texto */
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;   /* mais largo, retangular */
+  height: 120px;  /* altura menor, retangular */
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.discord-item img {
+  width: 120px;   /* imagem à esquerda */
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.discord-item span {
+  color: #0ff;
+  font-size: 20px;   /* texto maior */
+  font-weight: bold;
+  text-align: left;  /* texto alinhado à esquerda */
+}
+
+.discord-item:hover {
+  transform: scale(1.05);
+  background: #0ff;
+}
+
+.discord-item:hover span {
+  color: #000;
+}
+
+.sponsors {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.sponsors h2 {
+  color: #0ff;
+  margin-bottom: 20px;
+}
+
+.sponsor-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.discord-item, .sponsor-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  background: transparent;   /* 👈 totalmente transparente */
+  border: 2px solid rgb(35, 35, 35);
+  border-radius: 8px;   /* 👈 cantos menos arredondados */
+  padding: 15px 20px;
+  width: 250px;         /* 👈 mais largo */
+  height: 80px;        /* 👈 mais baixo */
+   cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+
+.sponsor-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.sponsor-item span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sponsor-item:hover {
+  transform: scale(1.05);
+  background: transparent;
+}
+
+
+/* Popup genérico de patrocinadores */
+#sponsorPopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  text-align: left; /* alinhamento à esquerda */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* empilha elementos */
+  gap: 15px;
+}
+
+#sponsorPopup .sponsor-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+#sponsorPopup .sponsor-header img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+#sponsorPopup .sponsor-header h3 {
+  color: #0ff;
+  font-size: 18px;
+  margin: 0;
+}
+
+#sponsorPopup hr {
+  border: 0;
+  height: 1px;
+  background: #0ff;
+  margin: 10px 0;
+}
+
+#sponsorPopup p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.popup {
+  display: none;  /* 👈 garante que o popup esteja escondido inicialmente */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  z-index: 2000;
+}
+
+.marquee {
+  overflow: hidden;        /* Esconde o que passar do container */
+  white-space: nowrap;     /* Mantém o texto em linha única */
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;      /* Começa fora da tela */
+  animation: scrollText 8s linear infinite; /* Duração e repetição */
+  font-size: 24px;         /* Ajuste do tamanho */
+  color: #0ff;             /* Cor neon */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+ /* adicionar fontes */
+@font-face {
+  font-family: 'Pepper';
+  src: url('Turbo Jungle.ttf') format('truetype');
+}
+
+.pepper-txt {
+  font-family: 'Pepper', sans-serif;
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: #00ffee;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+<div class="logo">
+  <k href="javascript:void(0);" onclick="showSection('home')">
+    <img src="group.png" alt="Logo" height="40" style="cursor:pointer;">
+  </k>
+</div>
+
+
+  <div class="menu-buttons">
+    <button onclick="showSection('home')">Início</button>
+    <button onclick="showSection('store')">Loja</button>
+    <button onclick="showSection('discord')">Discord</button>
+  </div>
+</header>
+
+  <!-- PÁGINA INÍCIO -->
+  <section id="home" class="active">
+    <h1><span class="titulo-efeito">Imperial Group</span> <n>Site</n></h1>
+
+    <small>Guia Rápido</small>
+    <h2>Como se juntar a nois</h2>
+    <p>Siga estas etapas simples para entrar no servidor e começar sua jornada no mundo da Imperial Group, onde temos varios jogos onde nos temos servissos.</p>
+
+    <div class="step">
+      <h3 class="balanco">1.Entre na nossa comunidade</h3>
+      <p>Primeiro, você precisa entrar na nossa comunidade no discord (Imperial Group), e responder as perguntas, apos isso veremos onde você tem interece em entrar.</p>
+      <button onclick="window.open('https://discord.gg/D6R6z297zY')">Entrar no DC</button>
+    </div>
+
+    <div class="step">
+       <h3 class="balanco1">2.Após entrar na comunidade</h3>
+      <p>Você precisa passar pela nossa "whitelist" para garantir uma experiência muito boa no servidor para todos os usuarios "atenção: leia as regras do servidor antes de tudo!".</p>
+    </div>
+
+    <h2>Pronto para entrar!</h2>
+    <p style="font-size:14px;">Após completar estas etapas, você estará pronto para começar sua aventura no mundo da Imperial Group!</p>
+
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq">
+      <div class="item">
+        <button class="q">Como faço para entrar na comunidade? <span>+</span></button>
+        <div class="a">Para entrar na comunidade, você precisa clicar no botão azul la em cima, depois passar pela whitelist. Após ser aprovado, você esta livre para se divertir em muitos jogos no qual nois temos guilda.</div>
+      </div>
+      <div class="item">
+        <button class="q">O que é whitelist e como funciona? <span>+</span></button>
+        <div class="a">Whitelist é um processo de aprovação para garantir que todos os usuarios entendam as regras básicas. Você precisará responder algumas perguntas, a whitelist é feita via Discord.</div>
+      </div>
+      <div class="item">
+        <button class="q">Tem recompenssas para Srimer (criador de conteudo)? <span>+</span></button>
+        <div class="a">Sim, incentivamos Streamings e temos vairas reconpessas e privilegios para quem ja é, mas primeiro precisa falar com a adiministração primeiro.</div>
+      </div>
+      <div class="item">
+        <button class="q">como funciona o processo de cargos na comunidade? <span>+</span></button>
+        <div class="a">Para obter algum cargo como o de "vip, patrocinador e apoiador" é preciso pagar, mas temos muitos cargo gratuitos como, o cargo de "membro" que você consegue ao entrar na comunidade, e varios outros que funcionam com pontos e temos tambem as "parcerias" que para isso a pessoa precisa criar um Ticket.</div>
+      </div>
+      <div class="item">
+        <button class="q">Como reportar jogadores? <span>+</span></button>
+        <div class="a">Crie um ticket e envie evidências (screenshots ou vídeos) que nossa equipe de moderação no Discord ira verificar.</div>
+      </div>
+    </div>
+
+    <button class="support-btn" onclick="togglePopup()">Forum Suporte</button>
+  </section>
+
+
+  <!-- PÁGINA LOJA -->
+  <section id="store">
+    <h2><g>Loja de Cargos</g></h2> 
+    <div class="store">
+      <div class="coin">Patrocinador</div>
+      <div class="coin">VIP</div>
+      <div class="coin">Apoiador</div>
+      <div class="coin">Parceria</div>
+      <div class="coin">Surpresa</div>
+    </div>
+  </section>
+
+ <!-- PÁGINA DISCORD -->
+<section id="discord">
+  <h2><g>Entre em nossas <x>comunidades</x>!!</g></h2>
+  <m class="pepper-txt">E fique atento às novidades</m>
+  <div class="discord-container">
+    <!-- Nossa Comunidade -->
+    <div class="discord-group">
+      <h2>Nossa Comunidade</h2>
+      <div class="discord-buttons">
+        <div class="discord-item" onclick="window.open('https://discord.gg/D6R6z297zY', '_blank')">
+          <img src="group.png" alt="Servidor Principal no discord">
+          <span>Imperial Group</span>
+        </div>
+        <div class="discord-item" onclick="window.open('https://discord.gg/nf6REewSGh', '_blank')">
+          <img src="city.png" alt="Suporte">
+          <span>Imperial City</span>
+        </div>
+        <div class="discord-item" onclick="window.open('https://discord.gg/e2ur7gxCxd', '_blank')">
+          <img src="airsoft.png" alt="Eventos">
+          <span>Imperial Airsoft</span>
+        </div>
+        <div class="discord-item" onclick="toggleFourthPopup()">
+          <img src="jogos.png" alt="Recrutamento">
+          <span>Imperial jogos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parcerias -->
+    <div class="discord-group">
+      <h2>Parcerias</h2>
+      <div class="discord-buttons">
+        <div class="discord-item">
+          <img src="parceria.png" alt="Parceria 1">
+          <span>Parceria 1</span>
+        </div>
+        <div class="discord-item">
+          <img src="parceria.png" alt="Parceria 2">
+          <span>Parceria 2</span>
+        </div>
+        <div class="discord-item">
+          <img src="parceria2.png" alt="Parceria 3">
+          <span>Parceria 3</span>
+        </div>
+        <div class="discord-item">
+          <img src="parceria2.png" alt="Parceria 4">
+          <span>Parceria 4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATROCÍNIOS -->
+<div class="sponsors">
+  <g><p><h2 class="balanco"> Patrocínios</h2>
+  <div class="sponsor-cards">
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 1', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 1">
+      <span>Patrocínio 1</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 2', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 2">
+      <span>Patrocínio 2</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 3', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 3">
+      <span>Patrocínio 3</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 3', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 3">
+      <span>Patrocínio 4</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 3', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 3">
+      <span>Patrocínio 5</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 3', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 3">
+      <span>Patrocínio 6</span>
+    </div>
+    <div class="sponsor-item" onclick="openSponsor('Patrocínio 3', 'logo.png', 'No momento não temos patrocinadores, caso queira ser, entre na comunidade do discord da Imperial Group')">
+      <img src="logo.png" alt="Patrocínio 3">
+      <span>Patrocínio 7</span>
+    </div>
+  </div></g>
+  </p><p>________________________________________________________________________________________________</p>
+</div> 
+
+<!-- POPUP GENÉRICO DE PATROCÍNIO -->
+<div class="popup" id="sponsorPopup">
+  <button class="close" onclick="closeSponsor()">X</button>
+  <!-- Texto inicial -->
+  <p style="color:#0ff; font-size:14px; margin-bottom:10px;">
+    Confira abaixo os detalhes dos nossos patrocinadores!
+  </p>
+  <div class="sponsor-header">
+    <img id="sponsorImage" src="logo.png" alt="Logo do Patrocínio">
+    <h3>Patrocidador:</h3>
+    <h3 id="sponsorTitle"></h3>
+  </div>
+  <hr>
+  <p id="sponsorInfo"></p>
+</div>
+
+
+<!-- POPUP PARCERIAS -->
+<div class="popup" id="partnershipPopup">
+  <button class="close" onclick="togglePartnershipPopup()">X</button>
+  <h3>Aviso</h3>
+  <p>No momento não temos parcerias.</p>
+</div>
+
+<!-- POPUP QUARTO SERVIDOR -->
+<div class="popup" id="fourthPopup">
+  <button class="close" onclick="toggleFourthPopup()">X</button>
+  <h3>Aviso</h3>
+  <p>Este servidor ainda não esta pronto.</p>
+</div>
+
+  <!-- POPUP SUPORTE -->
+  <div class="popup" id="supportPopup">
+    <button class="close" onclick="togglePopup()">X</button>
+    <h3>Fórum de Suporte</h3>
+    <input type="text" id="userName" placeholder="Seu nome">
+    <textarea id="userQuestion" placeholder="Digite sua pergunta"></textarea>
+    <button onclick="submitQuestion()">Enviar</button>
+    <div id="questions"></div>
+  </div>
+
+  <button id="backTop" onclick="scrollToTop()">Topo</button>
+
+  <!-- Mensagem final da página -->
+<div style="margin-top: 40px; text-align: center;">
+  <h2 style="color: #0ff; margin-bottom: 10px;">Obrigado por visitar!</h2>
+  <p style="color: #ffffff; font-size: 14px;">
+    Fique ligado para novidades, eventos e promoções da Imperial Group. Esperamos vê-lo em breve!
+  </p>
+</div>
+
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // FAQ toggle
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.q')) {
+        const btn = e.target.closest('.q');
+        const ans = btn.nextElementSibling;
+        const open = ans.classList.contains('open');
+        document.querySelectorAll('.faq .a').forEach(a => {
+          a.classList.remove('open');
+          a.previousElementSibling.querySelector('span').innerText = '+';
+        });
+        if (!open) {
+          ans.classList.add('open');
+          btn.querySelector('span').innerText = '-';
+        }
+      }
+    });
+
+    // suporte popup
+    function togglePopup() {
+      const p = document.getElementById('supportPopup');
+      p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+    }
+    function submitQuestion() {
+      const name = document.getElementById('userName').value.trim();
+      const q = document.getElementById('userQuestion').value.trim();
+      if (!name || !q) return alert("Preencha todos os campos!");
+      const div = document.createElement('div');
+      div.innerHTML = "<b>"+escapeHtml(name)+":</b> "+escapeHtml(q);
+      document.getElementById('questions').appendChild(div);
+      document.getElementById('userName').value="";
+      document.getElementById('userQuestion').value="";
+    }
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#039;");
+    }
+    
+    // voltar ao topo
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      backTop.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+    function scrollToTop() {
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    // Função para abrir/fechar o popup da loja
+function toggleStorePopup() {
+  const p = document.getElementById('storePopup');
+  p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+}
+
+// Ativar clique em todos os "coin"
+document.querySelectorAll('.coin').forEach(c => {
+  c.addEventListener('click', () => {
+    toggleStorePopup();
+  });
+});
+
+ // Função do popup do 4º botão
+  function toggleFourthPopup() {
+    const p = document.getElementById('fourthPopup');
+    p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+  }
+ // Função para abrir/fechar popup de parcerias
+  function togglePartnershipPopup() {
+    const p = document.getElementById('partnershipPopup');
+    p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+  }
+
+  // Ativar clique em todos os botões de parcerias
+  document.querySelectorAll('.discord-group:nth-child(2) .discord-item').forEach(item => {
+    item.addEventListener('click', togglePartnershipPopup);
+  });
+
+ function openSponsor(name, image, info) {
+    document.getElementById('sponsorTitle').textContent = name;
+    document.getElementById('sponsorImage').src = image;
+    document.getElementById('sponsorInfo').textContent = info;
+    document.getElementById('sponsorPopup').style.display = 'block';
+  }
+
+  function closeSponsor() {
+    document.getElementById('sponsorPopup').style.display = 'none';
+  }
+
+  </script>
+  <!-- POPUP LOJA -->
+<div class="popup" id="storePopup">
+  <button class="close" onclick="toggleStorePopup()">X</button>
+  <h3>Aviso</h3>
+  <p>Logo logo iremos arrumar isso</p>
+</div>
+
+</body>
+</html>
